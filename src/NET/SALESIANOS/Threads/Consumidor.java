@@ -26,7 +26,7 @@ public class Consumidor extends Thread {
             for (int i = 1; i <= cantidad; i++) {
                 Videojuego juego = tienda.recoger(nombre);
                 Thread.sleep((int)(Math.random() * tiempoMaxConsumo));
-                System.out.println("🎮 " + nombre + " ha jugado " + juego);
+                System.out.println(nombre + " ha jugado " + juego);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
