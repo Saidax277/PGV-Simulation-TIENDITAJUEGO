@@ -7,25 +7,28 @@ public class Consumidor extends Thread {
     private final Game tienda;
     private final String nombre;
     private final int cantidad;
+    private final int tiempoMaxConsumo;
 
+    // Constructor “corto” para compatibilidad
     public Consumidor(Game tienda, String nombre, int cantidad) {
+        this(tienda, nombre, cantidad, 1500); // tiempo por defecto
+    }
+
+    // Constructor “largo” con control de tiempo
+    public Consumidor(Game tienda, String nombre, int cantidad, int tiempoMaxConsumo) {
         this.tienda = tienda;
         this.nombre = nombre;
         this.cantidad = cantidad;
+        this.tiempoMaxConsumo = tiempoMaxConsumo;
     }
 
     @Override
     public void run() {
         try {
             for (int i = 1; i <= cantidad; i++) {
-                // Recoge el madafacking producto
                 Videojuego juego = tienda.recoger(nombre);
-
-                // Espera aleatoriamente
-                Thread.sleep((int)(Math.random() * 1500));
-
-                // Mensaje para decir que juego a madafacking jugado
-                System.out.println(nombre + " ha jugado al " + juego + " Y seguro que es mejor que tú.");
+                Thread.sleep((int)(Math.random() * tiempoMaxConsumo));
+                System.out.println(nombre + " ha jugado " + juego);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
