@@ -23,11 +23,8 @@ public class Productor extends Thread {
         try {
             for (int i = 1; i <= cantidad; i++) {
                 Thread.sleep((int)(Math.random() * 1000));
-
                 String tipo = tiposDeJuegos[(int)(Math.random() * tiposDeJuegos.length)];
-                
                 Videojuego juego = new Videojuego(i, tipo, compania);
-
                 tienda.guardar(juego);
             }
         } catch (InterruptedException e) {
