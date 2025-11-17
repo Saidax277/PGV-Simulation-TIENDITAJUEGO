@@ -13,6 +13,6 @@ public class Videojuego {
 
     @Override
     public String toString() {
-        return "Juego generico super guay del paraguay " + id + " " + nombre + " (compañía: " + compania + ")";
+        return "JuegoID-" + id + " " + nombre + " (compañía: " + compania + ")";
     }
 }
