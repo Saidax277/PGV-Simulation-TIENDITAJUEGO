@@ -15,7 +15,7 @@ public class Productor extends Thread {
     };
 
     public Productor(Game tienda, String compania, int cantidad) {
-        this(tienda, compania, cantidad, 1000);
+        this(tienda, compania, cantidad, 1000); 
     }
 
     public Productor(Game tienda, String compania, int cantidad, int tiempoMaxProduccion) {
