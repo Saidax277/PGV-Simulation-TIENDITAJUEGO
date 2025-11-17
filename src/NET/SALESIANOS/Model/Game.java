@@ -16,7 +16,7 @@ public class Game {
             wait();
         }
         stock.add(juego);
-        System.out.println("📦 Se guardó el: " + juego);
+        System.out.println("Se guardó el: " + juego);
         notifyAll();
     }
 
@@ -25,7 +25,7 @@ public class Game {
             wait();
         }
         Videojuego juego = stock.poll();
-        System.out.println("🛒 " + cliente + " ha comprado: " + juego);
+        System.out.println(cliente + " ha comprado: " + juego);
         notifyAll();
         return juego;
     }
