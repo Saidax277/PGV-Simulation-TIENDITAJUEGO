@@ -22,14 +22,9 @@ public class Productor extends Thread {
     public void run() {
         try {
             for (int i = 1; i <= cantidad; i++) {
-                // Espera aleatoriamente
-                Thread.sleep((int)(Math.random() * 1000));
-
-                // Crear el modofocking producto producto con tipo aleatorio
+                Thread.sleep((int)(Math.random() * 1000)); 
                 String tipo = tiposDeJuegos[(int)(Math.random() * tiposDeJuegos.length)];
                 Videojuego juego = new Videojuego(i, tipo, compania);
-
-                // Lo guarda en la modofocking tienda
                 tienda.guardar(juego);
             }
         } catch (InterruptedException e) {
