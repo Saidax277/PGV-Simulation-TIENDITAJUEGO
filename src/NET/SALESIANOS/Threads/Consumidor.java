@@ -10,7 +10,7 @@ public class Consumidor extends Thread {
     private final int tiempoMaxConsumo;
 
     public Consumidor(Game tienda, String nombre, int cantidad) {
-        this(tienda, nombre, cantidad, 1500);
+        this(tienda, nombre, cantidad, 1500); 
     }
 
     public Consumidor(Game tienda, String nombre, int cantidad, int tiempoMaxConsumo) {
