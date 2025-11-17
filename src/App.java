@@ -7,7 +7,7 @@ public class App {
         Game tienda = new Game(5); 
 
         Productor productor = new Productor(tienda, "Nintendo", 5);
-        Consumidor consumidor = new Consumidor(tienda, "Mario", 5);
+        Consumidor consumidor = new Consumidor(tienda, "La Falete", 5);
 
         productor.start();
         consumidor.start();
